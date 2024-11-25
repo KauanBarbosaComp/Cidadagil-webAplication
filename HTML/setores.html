@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Setor</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>Portal Administrativo da Prefeitura</h1>
+        <p>Bem-vindo! Escolha o setor que deseja acessar.</p>
+    </header>
+    <main>
+        <section class="setores">
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Saúde')">Saúde</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Educação')">Educação</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Assistência-social')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Infraestrutura')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Meio-ambiente')">Assistência Social</a></div>      
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Segurança-publica')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Esportes-lazer')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Turismo')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Economia')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Transportes e mobilidade urbana')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Agricultura')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Comunicação')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Planejamento-inovação')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Administração')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Serviços urbanos')">Assistência Social</a></div>
+            <div class="setor-card"><a href="#" onclick="redirectToDashboard('Direitos humanos')">Assistência Social</a></div>
+        </section>
+        <script>
+            function redirectToDashboard(setor) {
+                const url = `dashboard.html?setor=${encodeURIComponent(setor)}`;
+                window.location.href = url;
+            }
+        </script>
+    </main>
+    <footer>
+        <p>© Prefeitura Municipal de Vitória da Conquista - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

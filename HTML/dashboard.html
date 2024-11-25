@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    
+        <header>
+            <h1 id="titulo-setor">Carregando...</h1>
+        </header>
+        <main>
+            <section id="conteudo-setor">
+                <p>Carregando informações do setor...</p>
+            </section>
+            <button onclick="sair()">Sair</button>
+        </main>
+        <footer>
+            <p>© Prefeitura Municipal - Todos os direitos reservados.</p>
+        </footer>
+    <script> // Captura o parâmetro "setor" da URL
+        function getSetorFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('setor');
+        }
+
+        // Personalizar o conteúdo com base no setor
+        function carregarConteudo() {
+            const setor = getSetorFromURL();
+            const tituloSetor = document.getElementById('titulo-setor');
+            const conteudoSetor = document.getElementById('conteudo-setor');
+
+            const setores = {
+                'Saúde': 'Bem-vindo ao setor de Saúde! Aqui você pode gerenciar informações sobre atendimentos, hospitais e campanhas de vacinação.',
+                'Educação': 'Bem-vindo ao setor de Educação! Aqui você pode atualizar dados sobre escolas, alunos e projetos pedagógicos.',
+                'Assistência-social': 'Bem-vindo ao setor de Assistência Social! Aqui você pode organizar ações de apoio à população.',
+                'Infraestrutura': 'Bem-vindo ao setor de Infraestrutura! Gerencie obras públicas, manutenção e urbanismo.',
+                'Meio-ambiente': 'Bem-vindo ao setor de Meio Ambiente! Monitore projetos de sustentabilidade e licenças ambientais.',
+                'Seguranca-pública': 'Bem-vindo ao setor de Segurança Pública! Atualize informações sobre policiamento e proteção civil.',
+                'Esportes-lazer': 'Bem-vindo ao setor de Esportes e Lazer! Divulgue eventos esportivos e ações recreativas.',
+                'Turismo': 'Bem-vindo ao setor de Turismo! Promova pontos turísticos e programas culturais.',
+                'Economia': 'Bem-vindo ao setor de Economia! Gerencie dados financeiros e estratégias de desenvolvimento econômico.',
+                'Transportes e mobilidade urbana': 'Bem-vindo ao setor de Transportes! Atualize horários de transporte público e projetos de mobilidade.',
+                'Agricultura': 'Bem-vindo ao setor de Agricultura! Gerencie dados sobre produções agrícolas e feiras.',
+                'Comunicação': 'Bem-vindo ao setor de Comunicação! Organize notícias e atualizações da prefeitura.',
+                'Planejamento-inovação': 'Bem-vindo ao setor de Planejamento e Inovação! Gerencie projetos estratégicos da cidade.',
+                'Administração': 'Bem-vindo ao setor de Administração! Atualize dados administrativos e gestão interna.',
+                'Servicos urbanos': 'Bem-vindo ao setor de Serviços Urbanos! Organize serviços públicos como coleta de lixo e limpeza.',
+                'Direitos humanos': 'Bem-vindo ao setor de Direitos Humanos! Gerencie ações de apoio à inclusão e diversidade.'
+            };
+
+            if (setores[setor]) {
+                tituloSetor.textContent = `Setor de ${setor.replace('-', ' ').toUpperCase()}`;
+                conteudoSetor.innerHTML = `<p>${setores[setor]}</p>`;
+            } else {
+                tituloSetor.textContent = 'Setor não encontrado!';
+                conteudoSetor.innerHTML = '<p>Por favor, volte à página anterior e selecione um setor válido.</p>';
+            }
+        }
+
+        // Função de logout
+        function sair() {
+            window.location.href = 'setores.html';
+        }
+
+        // Chamar ao carregar a página
+        carregarConteudo();
+    </script>
+</body>
+</html>

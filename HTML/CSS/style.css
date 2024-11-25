@@ -1,0 +1,101 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: color #faf6ee;
+    color: black;
+}
+
+header {
+    background-color: #45BE93;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+header img{
+    width: 250px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: black;
+    text-decoration:none;
+    padding: 5px 10px;
+    background-color: #FFF0C7;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    background: #288692;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #0057b8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003f82;
+}
+
+footer {
+    background-color: #003f82;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Página de seleção de setor */
+.setores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.setor-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.setor-card a {
+    text-decoration: none;
+    color: #0057b8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.setor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #eef6ff;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadágil-Vitória da Conquista</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <img = src="IMG/WhatsApp_Image_2024-11-23_at_10.11.30-removebg-preview.png">
+        <h1>Portal Administrativo Cidadágil-Vitória da Conquista</h1>
+    </header>
+        
+            <form id="login-form" onsubmit="fazerLogin(event)">
+                <h2>Acesso Restrito</h2>
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Entrar</button>
+            </form>
+            <script>
+                function fazerLogin(event) {
+                    event.preventDefault(); // Evita o refresh da página
+            
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
+            
+                    fetch('http://localhost:3000/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username, password })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.token) {
+                            localStorage.setItem('token', data.token); // Salva o token no localStorage
+                            alert('Login realizado com sucesso!');
+                            window.location.href = 'setores.html'; // Redireciona
+                        } else {
+                            alert(data.message);
+                        }
+                    })
+                    .catch(err => {
+                        console.error('erro ao fazer login', err);
+
+                        alert('Erro ao tentar login. Tente novamente. ');
+                    });
+                }
+            </script>
+    <footer>
+        <p>© Prefeitura Municipal - Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
